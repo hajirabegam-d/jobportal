@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Portal Management</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Job Portal</h1>
+      </div>
+      <button id="reloadBtn" class="secondary-btn">Refresh</button>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>Add a job</h2>
+        <form id="jobForm">
+          <div class="field-grid">
+            <label>
+              Title
+              <input type="text" name="title" placeholder="Java Developer" required />
+            </label>
+            <label>
+              Company
+              <input type="text" name="company" placeholder="Example Corp" required />
+            </label>
+            <label>
+              Location
+              <input type="text" name="location" placeholder="Bangalore" required />
+            </label>
+            <label>
+              Employment type
+              <input type="text" name="employmentType" placeholder="Full-time" required />
+            </label>
+            <label>
+              Min salary
+              <input type="number" name="salaryMin" min="0" value="0" required />
+            </label>
+            <label>
+              Max salary
+              <input type="number" name="salaryMax" min="0" value="0" required />
+            </label>
+          </div>
+          <label>
+            Description
+            <textarea name="description" rows="4" placeholder="Describe the role" required></textarea>
+          </label>
+          <button type="submit">Create job</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2>Jobs</h2>
+        <div id="jobsList" class="jobs-list"></div>
+      </section>
+    </main>
+
+    <aside class="detail-panel panel">
+      <h2>Applications</h2>
+      <div id="jobDetail" class="job-detail empty">
+        Select a job to view applicants.
+      </div>
+      <form id="applicationForm" class="hidden">
+        <h3>Apply for this job</h3>
+        <label>
+          Applicant name
+          <input type="text" name="applicantName" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="applicantEmail" required />
+        </label>
+        <label>
+          Phone
+          <input type="text" name="phone" />
+        </label>
+        <label>
+          Resume URL
+          <input type="url" name="resumeUrl" placeholder="https://..." />
+        </label>
+        <button type="submit">Submit application</button>
+      </form>
+    </aside>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
